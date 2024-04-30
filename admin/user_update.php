@@ -66,7 +66,7 @@ $result = mysqli_query($conn,$sql);
                             </div>
                         </div>
                                            
-                        <button type="submit" name="submit" class="btn btn-primary">User Add</button>
+                        <button type="submit" name="update" class="btn btn-primary">Update User</button>
                     </form>
                 </div>
             </div>
@@ -76,6 +76,21 @@ $result = mysqli_query($conn,$sql);
 
 
 <?php
-    
+
+if(isset($_POST['update'])){
+
+    $role = $_POST['u_r_id'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $sql = "update users set username = '$username', password = '$password', RoleId_FK = '$role' where id = $Id";
+    $result = mysqli_query($conn,$sql);
+            echo "<script>
+            alert('User Updated Successfully');
+            window.location.href = 'user_show.php'
+            </script>";
+}
+
+
 include("footer.php");
 ?>
