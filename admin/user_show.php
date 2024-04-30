@@ -36,7 +36,7 @@ $result = mysqli_query($conn,$sql);
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table class="table table-responsive-sm">
+                                    <table class="table table-responsive-sm text-center table-bordered text-dark">
                                         <thead>
                                             <tr>
                                                 <th>Id</th>
@@ -54,8 +54,8 @@ $result = mysqli_query($conn,$sql);
                                                     <td><?php echo $rows['id'] ?></td>
                                                     <td><?php echo $rows['username'] ?></td>
                                                     <td><?php echo $rows['Role_Name'] ?></td>
-                                                    <td><a href="user_update.php?id=<?php echo $rows['id'] ?>">Edit <i class="bi bi-pencil-square"></i></td>
-                                                    <td><a href="user_delete.php?id=<?php echo $rows['id'] ?>">Delete <i class="bi bi-trash3-fill"></i></td>
+                                                    <td><a href="user_update.php?id=<?php echo $rows['id'] ?>" class="text-primary">Edit <i class="bi bi-pencil-square"></i></td>
+                                                    <td><a href="user_delete.php?id=<?php echo $rows['id'] ?>" class="text-danger">Delete <i class="bi bi-trash3-fill"></i></td>
                                             </tr>
                                                     <?php } ?>                                          
                                         </tbody>
