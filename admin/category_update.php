@@ -2,8 +2,11 @@
 include("header.php");
 include("connection.php");
 
-$sql = "select * from role";
+$Id = $_GET['id'];
+$sql = "select * from category where id = $Id";
 $result = mysqli_query($conn,$sql);
+$rows = mysqli_fetch_assoc($result);
+
 ?>
 
 
@@ -37,18 +40,12 @@ $result = mysqli_query($conn,$sql);
                         <div class="form-row">
                             <div class="form-group col-md-12">
                                 <label>Category Name</label>
-                                <?php
-                                $Id = $_GET['id'];
-                                $sql = "select * from category where id = $Id";
-                                $result = mysqli_query($conn,$sql);
-                                $rows = mysqli_fetch_assoc($result);
-                                ?>
                                 <input type="text" name="categoryname" value="<?php echo $rows['CategoryName'] ?>" class="form-control" placeholder="Enter The Name">
                             </div>
                             <div class="form-group col-md-12">
                                 <label>Category Image</label>
                                 <h6><span>Category Image : </Span><?php echo $rows['CategoryImage'] ?></h6>
-                                <input type="file" name="categoryimage" class="form-control">
+                                <input type="file" name="image" class="form-control">
                             </div>
                         </div>
                                            
@@ -65,14 +62,22 @@ $result = mysqli_query($conn,$sql);
 
 if(isset($_POST['update'])){
     $categoryname = $_POST['categoryname'];
-    $categoryimage = $_POST['categoryimage'];
+    $categoryimage = $_FILES['image']['name'];
 
-    $sql = "update category set categoryname = '$categoryname', categoryimage = '$categoryimage' where id = $Id";
+    $sql = "update category set CategoryName = '$categoryname', CategoryImage = '$categoryimage' where id = $Id";
     $result = mysqli_query($conn,$sql);
-            echo "<script>
-            alert('Category Updated Successfully');
-            window.location.href = 'category_show.php'
-            </script>";
+    if(isset($_FILES)){
+        $file_name = $_FILES['image']['name'];
+        $file_size = $_FILES['image']['size'];
+        $file_type = $_FILES['image']['type'];
+        $file_tmp = $_FILES['image']['tmp_name'];
+
+        move_uploaded_file($file_tmp, "images/category/" .$file_name);
+    }
+    echo "<script>
+        alert('Category Has Been Added');
+        window.location.href = 'category_show.php'
+        </script>";
 }
 
 

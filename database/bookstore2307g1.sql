@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 30, 2024 at 05:47 PM
+-- Generation Time: May 02, 2024 at 05:51 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -68,7 +68,8 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `CategoryName`, `CategoryImage`) VALUES
-(3, 'Horror', 'img-1smoke.jpg');
+(3, 'Horror', 'img-1smoke.jpg'),
+(12, 'Waqas', '');
 
 -- --------------------------------------------------------
 
@@ -168,7 +169,7 @@ ALTER TABLE `books`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `role`
