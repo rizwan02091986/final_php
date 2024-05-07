@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 04, 2024 at 03:35 PM
+-- Generation Time: May 07, 2024 at 05:47 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -40,8 +40,7 @@ CREATE TABLE `authors` (
 --
 
 INSERT INTO `authors` (`id`, `author_name`, `dob`, `location`, `image`) VALUES
-(1, 'Waqas', '1986-02-01', 'street 4 Karachi ', 'download (2).jfif'),
-(3, 'Harry', '2024-04-16', 'Multan', 'download (1).jfif');
+(1, 'Waqas', '2024-01-17', 'karachi', 'HD-wallpaper-bad-boy-attitude-attitude-boy-badboy-badboy-boys-love-thumbnail.jpg');
 
 -- --------------------------------------------------------
 
@@ -58,6 +57,13 @@ CREATE TABLE `books` (
   `AuthId_FK` int(11) NOT NULL,
   `BookImage` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `books`
+--
+
+INSERT INTO `books` (`id`, `Bookname`, `Description`, `Price`, `Catid_FK`, `AuthId_FK`, `BookImage`) VALUES
+(1, 'Harry Potter', 'Comic Book', 200, 3, 1, 'harrypotter.jpg');
 
 -- --------------------------------------------------------
 
@@ -76,7 +82,7 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `CategoryName`, `CategoryImage`) VALUES
-(3, 'Horror', 'img-1smoke.jpg');
+(3, 'Horror', 'HD-wallpaper-bad-boy-attitude-attitude-boys-attitude-badboy-badboy-boys-boys-fire-football-ghost.jpg');
 
 -- --------------------------------------------------------
 
@@ -164,13 +170,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `authors`
 --
 ALTER TABLE `authors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `category`

@@ -89,10 +89,11 @@ include("connection.php");
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Book Image</label>
+                                <h6><span>Author Image : </Span><?php echo $rows['BookImage'] ?></h6>
                                 <input type="file" name="image" class="form-control">
                             </div>
                         </div>
-                        <button type="submit" name="submit" class="btn btn-primary">Books Add</button>
+                        <button type="submit" name="update" class="btn btn-primary">Books Update</button>
                     </form>
                 </div>
             </div>
