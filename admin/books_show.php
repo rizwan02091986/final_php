@@ -65,8 +65,8 @@ $result = mysqli_query($conn,$sql);
                                                     <?php 
                                                         echo "<td><img src = \"images/books/{$rows['BookImage']} \" height=80px; width=80px; </td>"
                                                    ?>
-                                                    <td><a href="user_update.php?id=<?php echo $rows['id'] ?>" class="text-primary">Edit <i class="bi bi-pencil-square"></i></td>
-                                                    <td><a href="user_delete.php?id=<?php echo $rows['id'] ?>" class="text-danger">Delete <i class="bi bi-trash3-fill"></i></td>
+                                                    <td><a href="books_update.php?id=<?php echo $rows['id'] ?>" class="text-primary">Edit <i class="bi bi-pencil-square"></i></td>
+                                                    <td><a href="books_delete.php?id=<?php echo $rows['id'] ?>" class="text-danger">Delete <i class="bi bi-trash3-fill"></i></td>
                                             </tr>
                                                     <?php } ?>                                          
                                         </tbody>
