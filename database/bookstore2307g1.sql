@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 02, 2024 at 05:51 PM
+-- Generation Time: May 04, 2024 at 03:35 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -34,6 +34,14 @@ CREATE TABLE `authors` (
   `location` varchar(255) NOT NULL,
   `image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `authors`
+--
+
+INSERT INTO `authors` (`id`, `author_name`, `dob`, `location`, `image`) VALUES
+(1, 'Waqas', '1986-02-01', 'street 4 Karachi ', 'download (2).jfif'),
+(3, 'Harry', '2024-04-16', 'Multan', 'download (1).jfif');
 
 -- --------------------------------------------------------
 
@@ -68,8 +76,7 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`id`, `CategoryName`, `CategoryImage`) VALUES
-(3, 'Horror', 'img-1smoke.jpg'),
-(12, 'Waqas', '');
+(3, 'Horror', 'img-1smoke.jpg');
 
 -- --------------------------------------------------------
 
@@ -157,7 +164,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `authors`
 --
 ALTER TABLE `authors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `books`

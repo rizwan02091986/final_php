@@ -36,7 +36,7 @@ $rows = mysqli_fetch_assoc($result);
             </div>
             <div class="card-body">
                 <div class="basic-form">
-                    <form method="POST">
+                    <form method="POST" enctype="multipart/form-data">
                         <div class="form-row">
                             <div class="form-group col-md-12">
                                 <label>Category Name</label>
