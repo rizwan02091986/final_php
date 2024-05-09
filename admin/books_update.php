@@ -2,11 +2,6 @@
 include("header.php");
 include("connection.php");
 
-// $Id = $_GET['id'];
-// $sql = "select * from books where id = $Id";
-// $result = mysqli_query($conn,$sql);
-// $rows = mysqli_fetch_assoc($result);
-
 ?>
 
 
@@ -104,7 +99,7 @@ include("connection.php");
 
 
 <?php
-if(isset($_POST['submit'])){
+if(isset($_POST['update'])){
     $bookname = $_POST['bookname'];
     $description = $_POST['description'];
     $price = $_POST['price'];
@@ -113,10 +108,10 @@ if(isset($_POST['submit'])){
     $categoryname = $_POST['c_id'];
 
 
-    $sql = "insert into books (Bookname , Description , Price , Catid_FK , AuthId_FK , BookImage) VALUES ('$bookname', '$description' , '$price' , '$categoryname' , '$authorname' , '$image')";
+    $sql = "update books set Bookname = '$bookname' , Description = '$description' , Price = '$price' , Catid_FK = '$categoryname' , AuthId_FK = '$authorname' , BookImage = '$image' where id = $Id";
     $result = mysqli_query($conn,$sql);
 
-    if (isset($_FILES)) {
+    if (isset($_FILES)){
         $file_name = $_FILES['image']['name'];
         $file_size = $_FILES['image']['size'];
         $file_type = $_FILES['image']['type'];
@@ -125,7 +120,7 @@ if(isset($_POST['submit'])){
         move_uploaded_file($file_tmp, "images/books/" . $file_name);
     }
         echo "<script>
-        alert('Books Has Been Added');
+        alert('Books Has Been updated');
         window.location.href = 'books_show.php'
         </script>";
 
